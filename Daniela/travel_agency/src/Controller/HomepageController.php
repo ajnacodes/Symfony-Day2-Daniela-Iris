@@ -20,7 +20,7 @@ class HomepageController extends AbstractController
     }
 
 
-    #[Route('/homepage/{id}', name: 'app_info')]
+    #[Route('/homepage/info/{id}', name: 'app_info')]
     public function info(ManagerRegistry $doctrine, $id): Response
     {
         $locationInfo = $doctrine->getRepository(Locations::class)->find($id);
@@ -28,6 +28,25 @@ class HomepageController extends AbstractController
             "locationInfo" => $locationInfo
         ]);
     }
+
+    #[Route('/homepage/create', name: 'app_create')]
+    public function create(ManagerRegistry $doctrine): Response
+    {
+        $em = $doctrine->getManager();
+        $location = new Locations();
+        $location->setCity("CityTest");
+        $location->setDescription("Description");
+        $location->setPrice(1000);
+        // dd($location);
+        $em->persist($location);
+        $em->flush();
+
+        return new Response("Location has been created in : 
+        ". $location->getCity() . " with price : ". $location->getPrice()
+    );
+
+    }
+
 
 
     // public function loopData(ManagerRegistry $doctrine): Response
