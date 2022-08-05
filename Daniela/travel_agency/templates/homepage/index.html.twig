@@ -1,20 +1,111 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomepageController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+ {% include "components/hero.html.twig" %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/Symfony-Day2-Daniela-Iris/Daniela/travel_agency/src/Controller/HomepageController.php'|file_link(0) }}">src/Controller/HomepageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/Symfony-Day2-Daniela-Iris/Daniela/travel_agency/templates/homepage/index.html.twig'|file_link(0) }}">templates/homepage/index.html.twig</a></code></li>
-    </ul>
+ <div class="container py-5 my-5">
+
+<div class="container py-5" style="background-color: gray;">
+
+    <div class="my-5 py-5 text-center"><h5>SOME TITLE</h5></div>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-5">
+
+    {% for location in locations %}
+      <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2022/07/26/02/06/tea-plantation-7344887_1280.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> {{ location.city }} </h5>
+        <p class="card-text"> {{ location.description }} </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Price: {{ location.price }} EUR</small>
+      </div>
+    </div>
+  </div>
+    {% endfor %} 
+
+
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2022/07/26/02/06/tea-plantation-7344887_1280.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2018/07/02/06/13/taiwan-3511017_1280.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2022/07/21/16/25/landscape-7336546_1280.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2022/07/24/15/28/sunset-7341874_1280.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2022/04/09/20/52/dresden-7122254_1280.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2022/07/28/05/45/tulips-7349180_1280.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
 </div>
+
+</div>
+
+
+</div>
+
 {% endblock %}
