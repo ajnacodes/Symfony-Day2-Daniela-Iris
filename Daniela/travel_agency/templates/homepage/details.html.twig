@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+ {% include "components/hero.html.twig" %}
+
+<div class="container py-5 my-5">
+
+<div class="container py-5" style="background-color: gray;">
+
+    <div class="my-5 py-5 text-center"><h5>SOME TITLE</h5></div>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-5">
+
+   
+      <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2022/07/26/02/06/tea-plantation-7344887_1280.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> {{ locationInfo.city }} </h5>
+        <p class="card-text"> {{ locationInfo.description }} </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Price: {{ locationInfo.price }} EUR</small>
+        <a href="/homepage"> <button type="button" class="btn btn-outline-dark btn-sm">Go back</button> </a>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+  </div>
+   
+
+
+{% endblock %}

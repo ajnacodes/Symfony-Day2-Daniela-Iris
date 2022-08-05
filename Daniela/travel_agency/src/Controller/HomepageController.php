@@ -19,6 +19,17 @@ class HomepageController extends AbstractController
         ]);
     }
 
+
+    #[Route('/homepage/{id}', name: 'app_info')]
+    public function info(ManagerRegistry $doctrine, $id): Response
+    {
+        $locationInfo = $doctrine->getRepository(Locations::class)->find($id);
+        return $this->render('homepage/details.html.twig', [
+            "locationInfo" => $locationInfo
+        ]);
+    }
+
+
     // public function loopData(ManagerRegistry $doctrine): Response
     // {   $locations = $doctrine->getRepository(Locations::class)->findAll();
     //     return $this->render('homepage/index.html.twig', [
